@@ -1,0 +1,9 @@
+@import "../variables";
+
+@mixin transition($property: all, $speed: fast, $timing-function: ease-in-out, $important: false) {
+    @if ($important == true) {
+        transition: $property var(--ks-transition-#{$speed}) $timing-function !important;
+    } @else {
+        transition: $property var(--ks-transition-#{$speed}) $timing-function;
+    }
+}

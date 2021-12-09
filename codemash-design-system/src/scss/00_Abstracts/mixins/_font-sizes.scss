@@ -1,0 +1,11 @@
+@import '../variables';
+
+@mixin font-size($size, $important: false) {
+    @if($important==true) {
+        font-size: var(--ks-font-size-#{$size}) !important;
+    }
+
+    @else {
+        font-size: var(--ks-font-size-#{$size});
+    }
+}

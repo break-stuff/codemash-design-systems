@@ -1,0 +1,11 @@
+@import '../variables';
+
+@mixin shadow($size: sm, $important: false) {
+    @if($important==true) {
+        box-shadow: var(--ks-shadow-#{$size}) !important;
+    }
+
+    @else {
+        box-shadow: var(--ks-shadow-#{$size});
+    }
+}

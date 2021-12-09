@@ -1,0 +1,90 @@
+@import '../variables';
+
+@mixin br($size: sm, $important: false) {
+    @include br-t($size, $important);
+    @include br-b($size, $important);
+}
+
+@mixin br-t($size: sm, $important: false) {
+    @include br-tl($size, $important);
+    @include br-tr($size, $important);
+}
+
+@mixin br-b($size: sm, $important: false) {
+    @include br-bl($size, $important);
+    @include br-br($size, $important);
+}
+
+@mixin br-l($size: sm, $important: false) {
+    @include br-tl($size, $important);
+    @include br-bl($size, $important);
+}
+
+@mixin br-r($size: sm, $important: false) {
+    @include br-tr($size, $important);
+    @include br-br($size, $important);
+}
+
+@mixin br-tl($size: sm, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-top-left-radius: var(--ks-border-radius-#{$size}) !important;
+        }
+
+        @else {
+            border-top-left-radius: var(--ks-border-radius-#{$size});
+        }
+    }
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}
+
+@mixin br-tr($size: sm, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-top-right-radius: var(--ks-border-radius-#{$size}) !important;
+        }
+
+        @else {
+            border-top-right-radius: var(--ks-border-radius-#{$size});
+        }
+    }
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}
+
+@mixin br-bl($size: sm, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-bottom-left-radius: var(--ks-border-radius-#{$size}) !important;
+        }
+
+        @else {
+            border-bottom-left-radius: var(--ks-border-radius-#{$size});
+        }
+    }
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}
+
+@mixin br-br($size: sm, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-bottom-right-radius: var(--ks-border-radius-#{$size}) !important;
+        }
+
+        @else {
+            border-bottom-right-radius: var(--ks-border-radius-#{$size});
+        }
+    }
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}

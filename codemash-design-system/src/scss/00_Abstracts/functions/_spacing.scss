@@ -1,0 +1,18 @@
+@import '../variables';
+@import 'strings';
+
+@function spacing($name, $important: false) {
+    $value: var(--ks-spacing-size-#{$name});
+
+    // This enables negative values to be used.
+    @if(str-contains($name, "-")) {
+        $name: str-replace($name, "-", "");
+        $value: calc(-1 * var(--ks-spacing-size-#{$name}));
+    }
+
+    @if($important == true) {
+        @return $value !important;
+    }
+    
+    @return $value;
+}

@@ -1,0 +1,10 @@
+@import '../variables';
+
+@mixin z-index($size, $important: false) {
+    @if ($important == true) {
+        z-index: var(--ks-z-index-#{$size}) !important;
+    }
+    @else {
+        z-index: var(--ks-z-index-#{$size});
+    }
+}
