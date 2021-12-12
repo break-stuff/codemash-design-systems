@@ -2,8 +2,8 @@
 @import 'colors';
 
 @function default-border($setting) {
-    @if map-has-key($border, $setting) {
-        @return map-get($border, $setting);
+    @if map-has-key($default-border, $setting) {
+        @return map-get($default-border, $setting);
     }
 
     @else {

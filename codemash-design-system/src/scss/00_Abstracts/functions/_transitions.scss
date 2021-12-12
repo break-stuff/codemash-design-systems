@@ -1,0 +1,11 @@
+@import '../variables';
+
+@function transition($name) {
+    @if map-has-key($transitions, $name) {
+        @return map-get($transitions, $name);
+    }
+
+    @else {
+        @error "Invalid 'transition' value: '#{$name}'.";
+    }
+}

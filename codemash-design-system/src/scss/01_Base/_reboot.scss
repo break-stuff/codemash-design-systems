@@ -30,7 +30,7 @@
 body {
     margin: 0; // 1
     -webkit-text-size-adjust: 100%; // 2
-    -webkit-tap-highlight-color: rgba($black, 0); // 3
+    -webkit-tap-highlight-color: color(dark); // 3
 }
 
 // scss-docs-end reboot-body-rules
@@ -273,9 +273,9 @@ pre {
 }
 
 code {
-    color: $code-color;
     word-wrap: break-word;
     @include font-size(sm);
+    @include bg-color(light);
 
     // Streamline the style when inside anchors to avoid broken underline and more
     a>& {
@@ -285,7 +285,7 @@ code {
 
 kbd {
     @include p(xxxs);
-    @include font-size($kbd-font-size);
+    @include font-size(sm);
     @include br(sm);
     @include bg-color(light);
 
@@ -432,10 +432,8 @@ button,
 [type="submit"] {
     -webkit-appearance: button; // 2
 
-    @if $enable-button-pointers {
-        &:not(:disabled) {
-            cursor: pointer; // 3
-        }
+    &:not(:disabled) {
+        cursor: pointer; // 3
     }
 }
 

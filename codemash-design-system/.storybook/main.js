@@ -1,6 +1,14 @@
+const path = require("path");
+
 module.exports = {
-  stories: ['../src/scripts/components/**/*.stories.mdx', '../src/scripts/components/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  stories: [
+    '../src/components/**/*.stories.mdx', 
+    '../src/components/**/*.stories.@(js|jsx|ts|tsx)'
+  ],
+  addons: [
+    '@storybook/addon-links', 
+    '@storybook/addon-essentials'
+  ],
   framework: '@storybook/web-components',
   typescript: {
     check: false,
